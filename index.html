@@ -11,6 +11,7 @@ html, body {
     width: 100%;
     height: 100%;
     background: white;
+    overflow: hidden;
 }
 
 #zupy {
@@ -20,19 +21,37 @@ html, body {
     transform: translateX(-50%);
 }
 
-#zop {
+#zop, #hand {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
 }
+
+#hand {
+    display: none;
+}
+
+#glitch-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    display:none;
+}
 </style>
 </head>
 <body>
 <img id="zupy" src="zupy.png">
 <img id="zop" src="zop.png">
-<audio id="audio" src="welcome to the zop.wav"></audio>
+<img id="hand" src="hand.png">
+<audio id="zopAudio" src="welcome to the zop.wav"></audio>
+<audio id="sendAudio" src="send.wav"></audio>
+<audio id="thankAudio" src="thank you.wav"></audio>
+<canvas id="glitch-overlay"></canvas>
 <script src="main.js"></script>
 </body>
 </html>
